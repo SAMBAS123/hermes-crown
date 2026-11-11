@@ -1,0 +1,6 @@
+[project]
+name = "hermes-crown"
+version = "0.1.0"
+description = "One fenced speaker and durable handoff state for Hermes instances"
+requires-python = ">=3.11"
+dependencies = []

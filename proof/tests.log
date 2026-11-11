@@ -1,0 +1,23 @@
+test_loading_has_no_data_or_process_side_effects (test_plugin.PluginTest.test_loading_has_no_data_or_process_side_effects) ... ok
+test_local_answer_reaches_another_instance_context (test_plugin.PluginTest.test_local_answer_reaches_another_instance_context) ... ok
+test_native_directory_entry_imports_and_registers (test_plugin.PluginTest.test_native_directory_entry_imports_and_registers) ... ok
+test_remote_or_missing_surface_cannot_enroll_or_answer (test_plugin.PluginTest.test_remote_or_missing_surface_cannot_enroll_or_answer) ... ok
+test_report_error_is_structured_and_does_not_claim_delivery (test_plugin.PluginTest.test_report_error_is_structured_and_does_not_claim_delivery) ... ok
+test_twelve_simultaneous_candidates_have_one_winner (test_store.MultiprocessTest.test_twelve_simultaneous_candidates_have_one_winner) ... ok
+test_answer_bound_to_question_and_task (test_store.StoreTest.test_answer_bound_to_question_and_task) ... ok
+test_answered_question_is_not_reasked (test_store.StoreTest.test_answered_question_is_not_reasked) ... ok
+test_different_host_is_rejected (test_store.StoreTest.test_different_host_is_rejected) ... ok
+test_expired_owner_cannot_renew_publish_or_release (test_store.StoreTest.test_expired_owner_cannot_renew_publish_or_release) ... ok
+test_expiry_during_payload_build_cannot_publish (test_store.StoreTest.test_expiry_during_payload_build_cannot_publish) ... ok
+test_invalid_durations_are_rejected (test_store.StoreTest.test_invalid_durations_are_rejected) ... ok
+test_one_speaker_and_no_preemption (test_store.StoreTest.test_one_speaker_and_no_preemption) ... ok
+test_publication_carries_committed_answer_and_is_unique (test_store.StoreTest.test_publication_carries_committed_answer_and_is_unique) ... ok
+test_reboot_expires_lease_but_keeps_memory (test_store.StoreTest.test_reboot_expires_lease_but_keeps_memory) ... ok
+test_retries_and_key_conflicts (test_store.StoreTest.test_retries_and_key_conflicts) ... ok
+test_same_process_reacquisition_has_new_generation (test_store.StoreTest.test_same_process_reacquisition_has_new_generation) ... ok
+test_transaction_crash_does_not_corrupt_lease_or_answers (test_store.StoreTest.test_transaction_crash_does_not_corrupt_lease_or_answers) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.544s
+
+OK

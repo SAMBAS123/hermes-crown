@@ -1,0 +1,138 @@
+{
+  "passed": true,
+  "scope": "Three real Hermes PluginManager processes; native registration, tools, hooks, commands and unload; no LLM/gateway sessions",
+  "upstream_sha": "466591fe65d0257c96083df16fcd39636032304c",
+  "python": "3.12.14",
+  "lease_seconds": 3,
+  "takeover_seconds": 3.0614237830013735,
+  "first_successor": "B",
+  "next_successor": "C",
+  "stale_owner_blocked": true,
+  "unload_removed_tools": true,
+  "final_state": {
+    "pending": [
+      {
+        "seq": 2,
+        "event_id": "sdk-q2",
+        "source": "C",
+        "task_id": "real-sdk-task",
+        "session_id": "host-conversation",
+        "kind": "question",
+        "text": "Who is the report for?",
+        "created_at": 1794208840.2564123
+      }
+    ],
+    "answers": [
+      {
+        "question_id": "sdk-q1",
+        "answer_id": "2a0b6ad2fb8fe24ba28a5ea62f3e508521fed98001043a0d833b97325f77920b",
+        "text": "Markdown",
+        "created_at": 1794208840.2494414,
+        "question": "PDF or Markdown?",
+        "source": "B",
+        "task_id": "real-sdk-task",
+        "session_id": "host-conversation"
+      }
+    ],
+    "lease": {
+      "singleton": 1,
+      "owner": "C:f9d9f515dac94ac58a0097dc1712d1fb",
+      "label": "C",
+      "epoch": 3,
+      "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+      "expires_ns": 0,
+      "active": false
+    },
+    "outlet": [
+      {
+        "seq": 1,
+        "speaker": "A",
+        "epoch": 1,
+        "event_id": "sdk-q1",
+        "source": "B",
+        "task_id": "real-sdk-task",
+        "session_id": "host-conversation",
+        "kind": "question",
+        "text": "PDF or Markdown?",
+        "known_answers": [],
+        "answer_count": 0
+      },
+      {
+        "seq": 2,
+        "speaker": "B",
+        "epoch": 2,
+        "event_id": "sdk-q2",
+        "source": "C",
+        "task_id": "real-sdk-task",
+        "session_id": "host-conversation",
+        "kind": "question",
+        "text": "Who is the report for?",
+        "known_answers": [
+          {
+            "question_id": "sdk-q1",
+            "answer_id": "2a0b6ad2fb8fe24ba28a5ea62f3e508521fed98001043a0d833b97325f77920b",
+            "text": "Markdown",
+            "created_at": 1794208840.2494414,
+            "question": "PDF or Markdown?",
+            "source": "B",
+            "task_id": "real-sdk-task",
+            "session_id": "host-conversation"
+          }
+        ],
+        "answer_count": 1
+      }
+    ],
+    "event_count": 2,
+    "publication_count": 2,
+    "audit": [
+      {
+        "seq": 1,
+        "action": "acquire",
+        "owner": "A:25c6d61488654cfb8b26a79f4376885b",
+        "epoch": 1,
+        "at_ns": 91430638338879,
+        "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+      },
+      {
+        "seq": 2,
+        "action": "publish",
+        "owner": "A:25c6d61488654cfb8b26a79f4376885b",
+        "epoch": 1,
+        "at_ns": 91431254216900,
+        "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+      },
+      {
+        "seq": 3,
+        "action": "acquire",
+        "owner": "B:fd37ed7fcadd42d080d9e4375b1f2cb0",
+        "epoch": 2,
+        "at_ns": 91434319946917,
+        "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+      },
+      {
+        "seq": 4,
+        "action": "publish",
+        "owner": "B:fd37ed7fcadd42d080d9e4375b1f2cb0",
+        "epoch": 2,
+        "at_ns": 91434323700938,
+        "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+      },
+      {
+        "seq": 5,
+        "action": "acquire",
+        "owner": "C:f9d9f515dac94ac58a0097dc1712d1fb",
+        "epoch": 3,
+        "at_ns": 91437394024759,
+        "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+      },
+      {
+        "seq": 6,
+        "action": "release",
+        "owner": "C:f9d9f515dac94ac58a0097dc1712d1fb",
+        "epoch": 3,
+        "at_ns": 91437481487701,
+        "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+      }
+    ]
+  }
+}

@@ -1,0 +1,3365 @@
+{
+  "scope": "Coordination core, synthetic task content, real OS process failures",
+  "rounds": [
+    {
+      "round": 1,
+      "passed": true,
+      "takeover_seconds": 0.4769187450001482,
+      "process_ids": [
+        7,
+        8,
+        9
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.477s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208540.4556708
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208540.4518595,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:a0dbeb3443604e88a880c4b15a903a14",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91132958158986,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208540.4518595,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208540.4518595,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:25c6ac8d12444d62ad1f563578e699b8",
+            "epoch": 1,
+            "at_ns": 91131247692864,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:25c6ac8d12444d62ad1f563578e699b8",
+            "epoch": 1,
+            "at_ns": 91131459456952,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:6c8bead4540b4df2ae1691df1752f672",
+            "epoch": 2,
+            "at_ns": 91131928138053,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:6c8bead4540b4df2ae1691df1752f672",
+            "epoch": 2,
+            "at_ns": 91131934323258,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:a0dbeb3443604e88a880c4b15a903a14",
+            "epoch": 3,
+            "at_ns": 91132404554355,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:a0dbeb3443604e88a880c4b15a903a14",
+            "epoch": 3,
+            "at_ns": 91132510845756,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 2,
+      "passed": true,
+      "takeover_seconds": 0.47206436199485324,
+      "process_ids": [
+        10,
+        11,
+        12
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.472s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208541.9316192
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208541.9282494,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:460131c652f244b7bbe8ea9e3ca03401",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91134419416803,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208541.9282494,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208541.9282494,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:b282a982ee944948a24139870405e641",
+            "epoch": 1,
+            "at_ns": 91132721983956,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:b282a982ee944948a24139870405e641",
+            "epoch": 1,
+            "at_ns": 91132931556740,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:fb8ca559ce204062b81fadcdf18416ec",
+            "epoch": 2,
+            "at_ns": 91133400076937,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:fb8ca559ce204062b81fadcdf18416ec",
+            "epoch": 2,
+            "at_ns": 91133402593243,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:460131c652f244b7bbe8ea9e3ca03401",
+            "epoch": 3,
+            "at_ns": 91133865980730,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:460131c652f244b7bbe8ea9e3ca03401",
+            "epoch": 3,
+            "at_ns": 91133972708231,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 3,
+      "passed": true,
+      "takeover_seconds": 0.4746079439937603,
+      "process_ids": [
+        13,
+        14,
+        15
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.475s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208543.380388
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208543.3766193,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:42dba65bad604377937482b3d7437b21",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91135882572877,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208543.3766193,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208543.3766193,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:c047e7bc0fc844299d406e52956b1c80",
+            "epoch": 1,
+            "at_ns": 91134172053042,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:c047e7bc0fc844299d406e52956b1c80",
+            "epoch": 1,
+            "at_ns": 91134382411874,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:ad352aa60e3e47148e2de628e5a7e8c9",
+            "epoch": 2,
+            "at_ns": 91134849870622,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:ad352aa60e3e47148e2de628e5a7e8c9",
+            "epoch": 2,
+            "at_ns": 91134852747944,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:42dba65bad604377937482b3d7437b21",
+            "epoch": 3,
+            "at_ns": 91135328480181,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:42dba65bad604377937482b3d7437b21",
+            "epoch": 3,
+            "at_ns": 91135435934445,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 4,
+      "passed": true,
+      "takeover_seconds": 0.45853182800055947,
+      "process_ids": [
+        16,
+        17,
+        18
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.459s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208544.8459475
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208544.8423672,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:9287a4bb525b4a4d85939d2097545cd5",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91137333709987,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208544.8423672,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208544.8423672,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:ad4e1a58f149454082978d1338fd990c",
+            "epoch": 1,
+            "at_ns": 91135627690396,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:ad4e1a58f149454082978d1338fd990c",
+            "epoch": 1,
+            "at_ns": 91135837563288,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:20bbcfa8234a497284720d747a859ed3",
+            "epoch": 2,
+            "at_ns": 91136300517934,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:20bbcfa8234a497284720d747a859ed3",
+            "epoch": 2,
+            "at_ns": 91136304199716,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:9287a4bb525b4a4d85939d2097545cd5",
+            "epoch": 3,
+            "at_ns": 91136779720978,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:9287a4bb525b4a4d85939d2097545cd5",
+            "epoch": 3,
+            "at_ns": 91136886484639,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 5,
+      "passed": true,
+      "takeover_seconds": 0.4453188199986471,
+      "process_ids": [
+        19,
+        20,
+        21
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.445s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208546.312602
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208546.3081703,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:28dc74ba624440249cfdd09ca084bd38",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91138782773125,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208546.3081703,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208546.3081703,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:f80d131dbd7d473c9198dc2f0b8478cb",
+            "epoch": 1,
+            "at_ns": 91137092149765,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:f80d131dbd7d473c9198dc2f0b8478cb",
+            "epoch": 1,
+            "at_ns": 91137302391233,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:31780bd84a6941a081fde2f94b6f96bf",
+            "epoch": 2,
+            "at_ns": 91137762936058,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:31780bd84a6941a081fde2f94b6f96bf",
+            "epoch": 2,
+            "at_ns": 91137765799083,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:28dc74ba624440249cfdd09ca084bd38",
+            "epoch": 3,
+            "at_ns": 91138229057368,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:28dc74ba624440249cfdd09ca084bd38",
+            "epoch": 3,
+            "at_ns": 91138335540911,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 6,
+      "passed": true,
+      "takeover_seconds": 0.4724208580009872,
+      "process_ids": [
+        22,
+        23,
+        24
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.472s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208547.743826
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208547.7405672,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:8aeffaaff07b486ebd23388a5e7474ea",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91140230807727,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208547.7405672,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208547.7405672,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:ca59b853013643dcb0616d7646eadc82",
+            "epoch": 1,
+            "at_ns": 91138529126461,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:ca59b853013643dcb0616d7646eadc82",
+            "epoch": 1,
+            "at_ns": 91138738784379,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:97b65eaa3e824083946b52ae5e9ed9d0",
+            "epoch": 2,
+            "at_ns": 91139212125240,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:97b65eaa3e824083946b52ae5e9ed9d0",
+            "epoch": 2,
+            "at_ns": 91139215227728,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:8aeffaaff07b486ebd23388a5e7474ea",
+            "epoch": 3,
+            "at_ns": 91139677522786,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:8aeffaaff07b486ebd23388a5e7474ea",
+            "epoch": 3,
+            "at_ns": 91139783556971,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 7,
+      "passed": true,
+      "takeover_seconds": 0.4610401389945764,
+      "process_ids": [
+        25,
+        26,
+        27
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.461s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208549.198573
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208549.194952,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:00a38000930440b18b2730c838414388",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91141687264936,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208549.194952,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208549.194952,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:3bfccff1b2ea48f99352df0f39229f5b",
+            "epoch": 1,
+            "at_ns": 91139990919481,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:3bfccff1b2ea48f99352df0f39229f5b",
+            "epoch": 1,
+            "at_ns": 91140199986756,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:507ef0d73fe942f9aa5dd5ba749c45f5",
+            "epoch": 2,
+            "at_ns": 91140664201655,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:507ef0d73fe942f9aa5dd5ba749c45f5",
+            "epoch": 2,
+            "at_ns": 91140667112493,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:00a38000930440b18b2730c838414388",
+            "epoch": 3,
+            "at_ns": 91141133762872,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:00a38000930440b18b2730c838414388",
+            "epoch": 3,
+            "at_ns": 91141239474534,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 8,
+      "passed": true,
+      "takeover_seconds": 0.4756095789925894,
+      "process_ids": [
+        28,
+        29,
+        30
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.476s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208550.652005
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208550.648613,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:d2257c08c0914c18908b1c8075134e78",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91143139433935,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208550.648613,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208550.648613,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:98ce2a8f13a04a0c93a73c91f56d1204",
+            "epoch": 1,
+            "at_ns": 91141433388865,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:98ce2a8f13a04a0c93a73c91f56d1204",
+            "epoch": 1,
+            "at_ns": 91141644568247,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:452f0c700bd3471291fd471133818218",
+            "epoch": 2,
+            "at_ns": 91142120969573,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:452f0c700bd3471291fd471133818218",
+            "epoch": 2,
+            "at_ns": 91142123856114,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:d2257c08c0914c18908b1c8075134e78",
+            "epoch": 3,
+            "at_ns": 91142585553980,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:d2257c08c0914c18908b1c8075134e78",
+            "epoch": 3,
+            "at_ns": 91142692270150,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 9,
+      "passed": true,
+      "takeover_seconds": 0.459331710007973,
+      "process_ids": [
+        31,
+        32,
+        33
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.459s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208552.111388
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208552.1074402,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:6e332075640e4c9884906b58369af48f",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91144599424615,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208552.1074402,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208552.1074402,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:874ce9684afd44a2b6d448a21014a807",
+            "epoch": 1,
+            "at_ns": 91142898264713,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:874ce9684afd44a2b6d448a21014a807",
+            "epoch": 1,
+            "at_ns": 91143107427337,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:cd0465d246b94421877e263d5fb1d105",
+            "epoch": 2,
+            "at_ns": 91143572943144,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:cd0465d246b94421877e263d5fb1d105",
+            "epoch": 2,
+            "at_ns": 91143575993395,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:6e332075640e4c9884906b58369af48f",
+            "epoch": 3,
+            "at_ns": 91144046151138,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:6e332075640e4c9884906b58369af48f",
+            "epoch": 3,
+            "at_ns": 91144154535791,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 10,
+      "passed": true,
+      "takeover_seconds": 0.47793070699844975,
+      "process_ids": [
+        34,
+        35,
+        36
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.478s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208553.5656626
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208553.5619357,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:0f11520d31d24be5b7055739c7daf5fc",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91146069865164,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208553.5619357,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208553.5619357,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:fb0067c7553c4693b2a42c9ffa6eee3b",
+            "epoch": 1,
+            "at_ns": 91144358676937,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:fb0067c7553c4693b2a42c9ffa6eee3b",
+            "epoch": 1,
+            "at_ns": 91144569355966,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:e06f2debb01c429484ff82ffc5efa5ad",
+            "epoch": 2,
+            "at_ns": 91145041280309,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:e06f2debb01c429484ff82ffc5efa5ad",
+            "epoch": 2,
+            "at_ns": 91145043674408,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:0f11520d31d24be5b7055739c7daf5fc",
+            "epoch": 3,
+            "at_ns": 91145515709183,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:0f11520d31d24be5b7055739c7daf5fc",
+            "epoch": 3,
+            "at_ns": 91145622859004,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 11,
+      "passed": true,
+      "takeover_seconds": 0.4777233179920586,
+      "process_ids": [
+        37,
+        38,
+        39
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.478s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208555.0278115
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208555.0247216,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:6e3b197c756d4ec89c7483aaa20ccbc2",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91147518651764,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208555.0247216,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208555.0247216,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:c9dccd30bef74cb58040499d0920065d",
+            "epoch": 1,
+            "at_ns": 91145825071227,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:c9dccd30bef74cb58040499d0920065d",
+            "epoch": 1,
+            "at_ns": 91146033686236,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:eded56a8ac81427685920fab537486f0",
+            "epoch": 2,
+            "at_ns": 91146500391345,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:eded56a8ac81427685920fab537486f0",
+            "epoch": 2,
+            "at_ns": 91146512801572,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:6e3b197c756d4ec89c7483aaa20ccbc2",
+            "epoch": 3,
+            "at_ns": 91146961808336,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:6e3b197c756d4ec89c7483aaa20ccbc2",
+            "epoch": 3,
+            "at_ns": 91147071616656,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 12,
+      "passed": true,
+      "takeover_seconds": 0.4801575230085291,
+      "process_ids": [
+        40,
+        41,
+        42
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.480s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208556.5026212
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208556.4986947,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:aeecaafe2dcd47ae8efbe56ebf04f2cb",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91149004476021,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208556.4986947,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208556.4986947,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:6f7cd3d55fa04c2682f08330930e6cfe",
+            "epoch": 1,
+            "at_ns": 91147292687773,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:6f7cd3d55fa04c2682f08330930e6cfe",
+            "epoch": 1,
+            "at_ns": 91147505781582,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:d60ec6fa1fc24169b37d015ef9eb2d9b",
+            "epoch": 2,
+            "at_ns": 91147983798083,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:d60ec6fa1fc24169b37d015ef9eb2d9b",
+            "epoch": 2,
+            "at_ns": 91147986577829,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:aeecaafe2dcd47ae8efbe56ebf04f2cb",
+            "epoch": 3,
+            "at_ns": 91148450741908,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:aeecaafe2dcd47ae8efbe56ebf04f2cb",
+            "epoch": 3,
+            "at_ns": 91148557312217,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 13,
+      "passed": true,
+      "takeover_seconds": 0.47522128200216684,
+      "process_ids": [
+        43,
+        44,
+        45
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.475s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208557.965482
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208557.9620085,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:0ac24dac85284c07a053db0ca7c37d93",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91150453246133,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208557.9620085,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208557.9620085,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:fd2972ef3be945b6af3ee13c317e7a97",
+            "epoch": 1,
+            "at_ns": 91148753583439,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:fd2972ef3be945b6af3ee13c317e7a97",
+            "epoch": 1,
+            "at_ns": 91148963266718,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:2ced73b3b8c14e19b7909c68304ed6dd",
+            "epoch": 2,
+            "at_ns": 91149436144648,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:2ced73b3b8c14e19b7909c68304ed6dd",
+            "epoch": 2,
+            "at_ns": 91149439780258,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:0ac24dac85284c07a053db0ca7c37d93",
+            "epoch": 3,
+            "at_ns": 91149899957375,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:0ac24dac85284c07a053db0ca7c37d93",
+            "epoch": 3,
+            "at_ns": 91150005802726,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 14,
+      "passed": true,
+      "takeover_seconds": 0.4748844200075837,
+      "process_ids": [
+        46,
+        47,
+        48
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.475s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208559.4101064
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208559.4068909,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:25c5e2e20def46edaba9405cd866e250",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91151896836100,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208559.4068909,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208559.4068909,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:3cae54352463459c883b65e07f1fa4f7",
+            "epoch": 1,
+            "at_ns": 91150201243619,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:3cae54352463459c883b65e07f1fa4f7",
+            "epoch": 1,
+            "at_ns": 91150411257716,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:aa7c2fd515d74597976410fe30344de4",
+            "epoch": 2,
+            "at_ns": 91150877164107,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:aa7c2fd515d74597976410fe30344de4",
+            "epoch": 2,
+            "at_ns": 91150879847872,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:25c5e2e20def46edaba9405cd866e250",
+            "epoch": 3,
+            "at_ns": 91151343406298,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:25c5e2e20def46edaba9405cd866e250",
+            "epoch": 3,
+            "at_ns": 91151449709226,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 15,
+      "passed": true,
+      "takeover_seconds": 0.4749868229991989,
+      "process_ids": [
+        49,
+        50,
+        51
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.475s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208560.8493671
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208560.845715,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:1319394a1c9a436294b170954fdd8768",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91153338107458,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208560.845715,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208560.845715,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:d099feb4b13f43cdad2742feb9c5cd0d",
+            "epoch": 1,
+            "at_ns": 91151641951101,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:d099feb4b13f43cdad2742feb9c5cd0d",
+            "epoch": 1,
+            "at_ns": 91151851845566,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:065e2188e8454953a851bf18643af501",
+            "epoch": 2,
+            "at_ns": 91152316618271,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:065e2188e8454953a851bf18643af501",
+            "epoch": 2,
+            "at_ns": 91152319714839,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:1319394a1c9a436294b170954fdd8768",
+            "epoch": 3,
+            "at_ns": 91152784114183,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:1319394a1c9a436294b170954fdd8768",
+            "epoch": 3,
+            "at_ns": 91152890846691,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 16,
+      "passed": true,
+      "takeover_seconds": 0.4622721320047276,
+      "process_ids": [
+        52,
+        53,
+        54
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.462s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208562.307654
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208562.3033078,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:1b83a1971d2d4fa1ba05ac839dbf7a4f",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91154796081427,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208562.3033078,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208562.3033078,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:3dfb33eb8c434618897e3d759bf4d134",
+            "epoch": 1,
+            "at_ns": 91153099393457,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:3dfb33eb8c434618897e3d759bf4d134",
+            "epoch": 1,
+            "at_ns": 91153310015261,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:eda71ee582f94725bcaba22eee8e33ae",
+            "epoch": 2,
+            "at_ns": 91153774464686,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:eda71ee582f94725bcaba22eee8e33ae",
+            "epoch": 2,
+            "at_ns": 91153777848054,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:1b83a1971d2d4fa1ba05ac839dbf7a4f",
+            "epoch": 3,
+            "at_ns": 91154242228795,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:1b83a1971d2d4fa1ba05ac839dbf7a4f",
+            "epoch": 3,
+            "at_ns": 91154348677994,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 17,
+      "passed": true,
+      "takeover_seconds": 0.47562466299859807,
+      "process_ids": [
+        55,
+        56,
+        57
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.476s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208563.7649755
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208563.7613986,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:b301ee5491df4b6196936474a646ff81",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91156268500849,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208563.7613986,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208563.7613986,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:0f693a72fe3a4cf3a59d361bdc07fdad",
+            "epoch": 1,
+            "at_ns": 91154556160345,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:0f693a72fe3a4cf3a59d361bdc07fdad",
+            "epoch": 1,
+            "at_ns": 91154769355557,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:2709e2b772f948fea651bb15a0d0b123",
+            "epoch": 2,
+            "at_ns": 91155240212193,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:2709e2b772f948fea651bb15a0d0b123",
+            "epoch": 2,
+            "at_ns": 91155243080571,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:b301ee5491df4b6196936474a646ff81",
+            "epoch": 3,
+            "at_ns": 91155714945293,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:b301ee5491df4b6196936474a646ff81",
+            "epoch": 3,
+            "at_ns": 91155821891703,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 18,
+      "passed": true,
+      "takeover_seconds": 0.4734036649897462,
+      "process_ids": [
+        58,
+        59,
+        60
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.473s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208565.223878
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208565.2205515,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:e4048723d0be452bb52314ff6090ae0e",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91157711962294,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208565.2205515,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208565.2205515,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:f7a603db69b24202bd4dfe8f234132d0",
+            "epoch": 1,
+            "at_ns": 91156018141246,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:f7a603db69b24202bd4dfe8f234132d0",
+            "epoch": 1,
+            "at_ns": 91156228118044,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:36508b0d572349d6bf602c867d1d09ee",
+            "epoch": 2,
+            "at_ns": 91156689779885,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:36508b0d572349d6bf602c867d1d09ee",
+            "epoch": 2,
+            "at_ns": 91156692506060,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:e4048723d0be452bb52314ff6090ae0e",
+            "epoch": 3,
+            "at_ns": 91157157946762,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:e4048723d0be452bb52314ff6090ae0e",
+            "epoch": 3,
+            "at_ns": 91157264925762,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 19,
+      "passed": true,
+      "takeover_seconds": 0.47621142699790653,
+      "process_ids": [
+        61,
+        62,
+        63
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.476s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208566.6786788
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208566.6750007,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:d44f57adb5b440bab30cc4f16f99da47",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91159181938261,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208566.6750007,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208566.6750007,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:32522be992ee48258ed8b6ad93ea2657",
+            "epoch": 1,
+            "at_ns": 91157472258455,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:32522be992ee48258ed8b6ad93ea2657",
+            "epoch": 1,
+            "at_ns": 91157683495143,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:a3d4b7d5d5174bc2849f21b8e8a7b06f",
+            "epoch": 2,
+            "at_ns": 91158146810639,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:a3d4b7d5d5174bc2849f21b8e8a7b06f",
+            "epoch": 2,
+            "at_ns": 91158150396922,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:d44f57adb5b440bab30cc4f16f99da47",
+            "epoch": 3,
+            "at_ns": 91158628676418,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:d44f57adb5b440bab30cc4f16f99da47",
+            "epoch": 3,
+            "at_ns": 91158734692443,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    },
+    {
+      "round": 20,
+      "passed": true,
+      "takeover_seconds": 0.4592311769956723,
+      "process_ids": [
+        64,
+        65,
+        66
+      ],
+      "steps": [
+        "Three real processes joined. A holds the speaking lease.",
+        "User answered: Markdown, please. The answer is committed to disk.",
+        "Killed A. B continued in 0.459s: knows Markdown; asks only the pending question.",
+        "Paused B; C took over. Revived B: its old token was REJECTED.",
+        "PASS: three unique publications; saved answer intact; pending question intact; stale speaker fenced."
+      ],
+      "state": {
+        "pending": [
+          {
+            "seq": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "created_at": 1794208568.1452029
+          }
+        ],
+        "answers": [
+          {
+            "question_id": "q-format",
+            "answer_id": "answer-format",
+            "text": "Markdown, please.",
+            "created_at": 1794208568.1414993,
+            "question": "PDF or Markdown?",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research"
+          }
+        ],
+        "lease": {
+          "singleton": 1,
+          "owner": "C:37168cfc006f4d43bf5dc27b1d2ef28c",
+          "label": "C",
+          "epoch": 3,
+          "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5",
+          "expires_ns": 91160624626710,
+          "active": true
+        },
+        "outlet": [
+          {
+            "seq": 1,
+            "speaker": "A",
+            "epoch": 1,
+            "event_id": "q-format",
+            "source": "research",
+            "task_id": "report-42",
+            "session_id": "session-research",
+            "kind": "question",
+            "text": "PDF or Markdown?",
+            "known_answers": [],
+            "answer_count": 0
+          },
+          {
+            "seq": 2,
+            "speaker": "B",
+            "epoch": 2,
+            "event_id": "q-audience",
+            "source": "writer",
+            "task_id": "report-42",
+            "session_id": "session-writer",
+            "kind": "question",
+            "text": "Who is the report for?",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208568.1414993,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          },
+          {
+            "seq": 3,
+            "speaker": "C",
+            "epoch": 3,
+            "event_id": "done",
+            "source": "builder",
+            "task_id": "report-42",
+            "session_id": "",
+            "kind": "update",
+            "text": "Draft is ready.",
+            "known_answers": [
+              {
+                "question_id": "q-format",
+                "answer_id": "answer-format",
+                "text": "Markdown, please.",
+                "created_at": 1794208568.1414993,
+                "question": "PDF or Markdown?",
+                "source": "research",
+                "task_id": "report-42",
+                "session_id": "session-research"
+              }
+            ],
+            "answer_count": 1
+          }
+        ],
+        "event_count": 3,
+        "publication_count": 3,
+        "audit": [
+          {
+            "seq": 1,
+            "action": "acquire",
+            "owner": "A:a06e65531a734c9aa222dd82e86032ed",
+            "epoch": 1,
+            "at_ns": 91158928688910,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 2,
+            "action": "publish",
+            "owner": "A:a06e65531a734c9aa222dd82e86032ed",
+            "epoch": 1,
+            "at_ns": 91159138784685,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 3,
+            "action": "acquire",
+            "owner": "B:cac0d180a4354d09a27f673a553f44ba",
+            "epoch": 2,
+            "at_ns": 91159599265549,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 4,
+            "action": "publish",
+            "owner": "B:cac0d180a4354d09a27f673a553f44ba",
+            "epoch": 2,
+            "at_ns": 91159602706898,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 5,
+            "action": "acquire",
+            "owner": "C:37168cfc006f4d43bf5dc27b1d2ef28c",
+            "epoch": 3,
+            "at_ns": 91160070522248,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          },
+          {
+            "seq": 6,
+            "action": "publish",
+            "owner": "C:37168cfc006f4d43bf5dc27b1d2ef28c",
+            "epoch": 3,
+            "at_ns": 91160178527979,
+            "boot_id": "f7c4cce7-70d6-4cb9-b66c-3b4e4be91be5"
+          }
+        ]
+      },
+      "scope": "Three real Crown processes; not three live Hermes model sessions."
+    }
+  ]
+}

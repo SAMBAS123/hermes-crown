@@ -1,0 +1,13 @@
+name: crown
+version: 0.1.0
+description: >-
+  One leased speaker and a durable question/answer record for cooperating Hermes
+  instances on one Linux host. Publishes only to Crown's local SQLite outlet.
+  Explicit /crown here enrollment starts a local heartbeat thread; /crown leave
+  stops it. Reads/writes the operator-configured shared database, outside profile
+  storage. Does not intercept native chat, send network messages, or call models.
+provides_tools:
+  - crown_report
+  - crown_context
+provides_hooks:
+  - pre_llm_call
