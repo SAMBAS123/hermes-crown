@@ -1,8 +1,8 @@
 {
   ".gitignore": "768b117fcb678252300cc724bf7cb64992c7dcb30501bbd090f08a4e03ac60af",
   "LICENSE": "7a521b04d4348394a44df3ea2dd1bcba6b17a2b91205219b439e808e77cfd099",
-  "README.md": "beaad528d71cb7e48ccbeb579fd405ed190fd9dfd2b094e34226de10385fb22c",
-  "VALIDATION.md": "27ce95d189712b0cd3400d1b22810b24dd95b12960eaf5d0e57ed8f3b58a6ab4",
+  "README.md": "13ce0dbee26486dee50a42ad8aeeaa2c5ab84b751f2b97c5c159cbfd7fc56549",
+  "VALIDATION.md": "7e48b6f1d2e0fe51fde4a168eb17da2a0d95fecb5e245c8f32f86870ebfa888d",
   "__init__.py": "adca708f4ed8c6645e719cf0e365287315f2f41ee97a18e38cb2310d2beceb14",
   "crown/__init__.py": "6676921ec1277f0e0317ff25e5f95872a51bd9f0cd6a5760ea8fa3e702a015e9",
   "crown/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
@@ -11,7 +11,7 @@
   "crown/plugin.py": "6a0c293c754c970ddd2e74258ed1200594c35e6f3cbdd61341e8134bd8893c57",
   "crown/store.py": "c35abdc5815eb2877233a6de80473ce3733c35dbce43658fa948f0ffe80f809d",
   "crown/worker.py": "f82712ed34862b8a72361baa501541b505c6b7c3bd9ac98450929f5aaee90f27",
-  "docs/DECISIONS.md": "5ba18be6939b8bea6164acc675b2f760d5d37ce08f3b317061f7363d65333f4b",
+  "docs/DECISIONS.md": "5e7940c22ffeee983a520fbe09ade2a6f6b5bef5cddb1971f5f82f33a1b656d9",
   "plugin.yaml": "839eaaf03c4ba2b0b06ba1dd0d5a68ae662977339c2b9cf0b05ecaaa8d870164",
   "proof/failure-proof.json": "803fb8dd9a92f335fe95213a23e31f0d9e9c3b738d49f7b15881aa5a1e616edd",
   "proof/failure-proof.log": "fe411ba4a6f07a4a1783d8820710200c418679b74d149f2e34633bc45cb9eef6",
@@ -22,5 +22,6 @@
   "pyproject.toml": "5db479b3c94075b4359f78ffecfd4a9a9f399ecfc6c025dfc91a24b7c7cd0574",
   "tests/hermes_host_probe.py": "bba4d99f16802645e499c582e05b9d3776c61e17f507b0a816c3b2f4675a9bae",
   "tests/test_plugin.py": "528744af04da1eb51d3359133b795a2917c33e6a33beac62fe0aa3a795ef5b18",
-  "tests/test_store.py": "6c024459c44cfde9b52faa98e1c34c6130e2da77b15f4a260fe8f35f06d25547"
+  "tests/test_store.py": "6c024459c44cfde9b52faa98e1c34c6130e2da77b15f4a260fe8f35f06d25547",
+  "proof/unittest-2026-11-12.txt": "69db2c2b9236a0b07ec8835cd0b58ebdb94372ce86abc8b95261ccd3d1fcacb4"
 }

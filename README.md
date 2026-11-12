@@ -158,12 +158,43 @@ The database is one authority, not a highly available distributed database. No
 claim is made about cross-machine partitions, exactly-once external delivery,
 or semantic deduplication of differently worded reports.
 
-## Next real-Hermes acceptance test
+## Publication
 
-Use three genuinely independent Hermes runtimes, not three labels hosted in one
-process that dies as a unit. Each queues one real tool result. Save a local human
-answer, kill the speaking runtime, verify the next runtime sees that answer via
-`crown_context`, then revive a paused former speaker and verify rejection at the
-outlet. Record the uncut result before treating this as a submission-ready demo.
+This repository is public: <https://github.com/SAMBAS123/hermes-crown>
 
-No repository has been published, catalog entry submitted, or prize claimed.
+Crown is a community catalog plugin. Catalog pull request
+[#153178](https://github.com/NousResearch/hermes-agent/pull/153178) was merged
+by teknium1 on 2026-11-11 at 19:02 America/New_York (`mergedAt`
+2026-11-12T00:02:54Z). On that pull request, Catalog tests and
+`pinned-source-validate` completed with success. That accepts catalog commit
+`fe6b86874190557ef5347c1752e24a6d65f7511a`. It is not hackathon judging, and no
+prize is claimed here.
+
+## Later driver run 84d14852
+
+Run `84d14852b99b4cb8bf16cc08a6aa5089` on 2026-11-09. The original journal,
+`crown_video_evidence.84d14852b99b4cb8bf16cc08a6aa5089.jsonl`, was removed by
+scratch prune on 2026-11-11. This note was checked against the contemporaneous
+parse of that file, saved in the session tool transcript while the file still
+existed. It was not re-executed for this documentation update, and the journal
+is not on disk now.
+
+From that parse:
+
+- Desk held epoch 1, then was killed.
+- Field took epoch 2 in 1.913 seconds.
+- The JPEG answer was already committed (`live-q1`, text `JPEG`).
+- Field was paused. Shop took epoch 3 in 1.477 seconds.
+- Field's old token was refused. The evidence summary recorded `passed: true`
+  and `stale_token_refused: true`.
+
+The 64-second clip is a journal reconstruction of that run, not an uncut
+terminal recording. On this host the replacement file is 64.000 seconds and
+190,112 bytes. An earlier recut of the same journal measured about 4839 seconds
+and was replaced.
+
+## Limits
+
+One Linux host. Crown's own SQLite outlet. Native Hermes chat and Telegram are
+not silenced. The pause in that run was coordinated. Recovery from an unexpected
+freeze during a database write remains unproven.

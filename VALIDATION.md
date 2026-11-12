@@ -1,10 +1,31 @@
-# Validation — 2026-11-09
+# Validation
 
-## What passed
+## Rerun — 2026-11-12
+
+On this host, `python3 -m unittest discover -s tests -v` ran 22 tests in 3.286s
+and exited 0. Transcript: `proof/unittest-2026-11-12.txt`. That replaces the
+older "18 tests" count for the current tree. It does not re-run the model
+driver.
+
+## Later driver run 84d14852
+
+Run `84d14852b99b4cb8bf16cc08a6aa5089` passed on 2026-11-09. The original
+journal file was pruned on 2026-11-11. The numbers below were read from the
+saved parse of that journal, not from a file still on disk, and not from a
+new model run.
+
+Desk epoch 1 was killed. Field took epoch 2 in 1.913s. The JPEG answer was
+already committed. A coordinated pause of Field let Shop take epoch 3 in
+1.477s. Field's old token was refused.
+
+The 64-second video is a journal reconstruction, not an uncut terminal
+recording.
+
+## What passed — 2026-11-09
 
 | Check | Observed result |
 | --- | --- |
-| Standard-library unit/integration suite | 18 tests passed |
+| Standard-library unit/integration suite | 18 tests passed on that date. The 2026-11-12 rerun of the current tree is 22. |
 | Simultaneous acquisition | 12 OS processes raced; exactly one acquired the lease |
 | Repeated failure proof | 20/20 rounds passed with three real processes each |
 | Hard-kill recovery | Saved answer remained; successor published the pending question |
@@ -61,14 +82,14 @@ Evidence is in `proof/failure-proof.json`, `proof/failure-proof.log`,
 
 ## Still unverified
 
-This is a functioning coordination-core prototype with a tested Hermes plugin
-registration path. It is **not yet the full hackathon demonstration**.
+Catalog acceptance is not hackathon judging. Run `84d14852` was a prescribed
+three-host model driver on one Linux machine. It is not an uncut terminal
+recording, and it was not re-run for the 2026-11-12 documentation update.
 
-The next acceptance test must run three independent, configured Hermes agent
-runtimes, perform real tasks through their models, and repeat the same failure
-sequence through the intended local user interface. Model behavior, normal
-gateway/CLI command dispatch and actual installed-host lifecycle still need
-that end-to-end run. Native Hermes messages outside Crown are not gated.
+Native Hermes chat, the gateway, and Telegram stay outside Crown's outlet.
+Coordinated pause is what that run proved. An unexpected freeze during a
+database write is still unproven. Normal gateway command dispatch on an
+already-installed user profile was not the thing under test.
 
 Cross-machine consensus, network partitions, external messaging delivery,
 automatic attention detection, hostile local processes and loss of the database
